@@ -1,14 +1,15 @@
-deep-equal
+deep-is
 ==========
 
-Node's `assert.deepEqual() algorithm` as a standalone module.
+Node's `assert.deepEqual() algorithm` as a standalone module. Exactly like
+[deep-equal](https://github.com/substack/node-deep-equal) except for the fact that `deepEqual(NaN, NaN) === true`.
 
 This module is around [5 times faster](https://gist.github.com/2790507)
 than wrapping `assert.deepEqual()` in a `try/catch`.
 
-[![browser support](http://ci.testling.com/substack/node-deep-equal.png)](http://ci.testling.com/substack/node-deep-equal)
+[![browser support](http://ci.testling.com/thlorenz/deep-is.png)](http://ci.testling.com/thlorenz/deep-is)
 
-[![build status](https://secure.travis-ci.org/substack/node-deep-equal.png)](http://travis-ci.org/substack/node-deep-equal)
+[![build status](https://secure.travis-ci.org/thlorenz/deep-is.png)](http://travis-ci.org/thlorenz/deep-is)
 
 example
 =======
@@ -44,7 +45,7 @@ install
 With [npm](http://npmjs.org) do:
 
 ```
-npm install deep-equal
+npm install deep-is
 ```
 
 test

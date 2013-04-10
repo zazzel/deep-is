@@ -1,7 +1,7 @@
 {
-    "name" : "deep-equal",
+    "name" : "deep-is",
     "version" : "0.0.0",
-    "description" : "node's assert.deepEqual algorithm",
+    "description" : "node's assert.deepEqual algorithm except for NaN being equal to NaN",
     "main" : "index.js",
     "directories" : {
         "lib" : ".",
@@ -17,7 +17,7 @@
     },
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/substack/node-deep-equal.git"
+        "url" : "http://github.com/thlorenz/deep-is.git"
     },
     "keywords" : [
         "equality",
@@ -25,9 +25,9 @@
         "compare"
     ],
     "author" : {
-        "name" : "James Halliday",
-        "email" : "mail@substack.net",
-        "url" : "http://substack.net"
+        "name" : "Thorsten Lorenz",
+        "email" : "thlorenz@gmx.de",
+        "url" : "http://thlorenz.com"
     },
     "license" : "MIT",
     "testling" : {
