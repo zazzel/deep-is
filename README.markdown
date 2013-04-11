@@ -15,7 +15,7 @@ example
 =======
 
 ``` js
-var equal = require('deep-equal');
+var equal = require('deep-is');
 console.dir([
     equal(
         { a : [ 2, 3 ], b : [ 4 ] },
@@ -31,9 +31,9 @@ console.dir([
 methods
 =======
 
-var deepEqual = require('deep-equal')
+var deepIs = require('deep-is')
 
-deepEqual(a, b)
+deepIs(a, b)
 ---------------
 
 Compare objects `a` and `b`, returning whether they are equal according to a
