@@ -9,8 +9,12 @@ var Object_keys = typeof Object.keys === 'function'
 ;
 
 var deepEqual = module.exports = function (actual, expected) {
+  // enforce Object.is +0 !== -0
+  if (actual === 0 && expected === 0) {
+    return areZerosEqual(actual, expected);
+
   // 7.1. All identical values are equivalent, as determined by ===.
-  if (actual === expected) {
+  } else if (actual === expected) {
     return true;
 
   } else if (actual instanceof Date && expected instanceof Date) {
@@ -33,7 +37,7 @@ var deepEqual = module.exports = function (actual, expected) {
   } else {
     return objEquiv(actual, expected);
   }
-}
+};
 
 function isUndefinedOrNull(value) {
   return value === null || value === undefined;
@@ -46,6 +50,11 @@ function isArguments(object) {
 function isNumberNaN(value) {
   // NaN === NaN -> false
   return typeof value == 'number' && value !== value;
+}
+
+function areZerosEqual(zeroA, zeroB) {
+  // (1 / +0|0) -> Infinity, but (1 / -0) -> -Infinity and (Infinity !== -Infinity)
+  return (1 / zeroA) === (1 / zeroB);
 }
 
 function objEquiv(a, b) {
